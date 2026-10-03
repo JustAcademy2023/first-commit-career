@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Commit Career: How Freshers Can Get Their First Software Development Job</title>
+<meta name="description" content="A playful git log style guide to landing your first software development job as a fresher: skills, projects, courses and reading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1535;--sky:#eceeff;--coral:#ff5d5d;--sun:#ffd23f;--mint:#2ec4a6;--white:#fff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--sky);color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--white)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px;flex-wrap:wrap}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;text-decoration:none}
+.logo span{color:var(--sun)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--sun)}
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.9rem);font-weight:800}
+.hero p.lead{margin:18px 0 26px;font-size:1.12rem;max-width:30em}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:14px;border:3px solid var(--ink);background:var(--sun);box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--white);margin-left:10px}
+.editor{background:var(--ink);color:#d9d4ff;border-radius:18px;overflow:hidden;box-shadow:10px 10px 0 var(--coral);transform:rotate(1.5deg)}
+.bar{display:flex;gap:7px;padding:12px 16px;background:#2a2252}
+.bar i{width:12px;height:12px;border-radius:50%;background:var(--coral)}
+.bar i:nth-child(2){background:var(--sun)}
+.bar i:nth-child(3){background:var(--mint)}
+.code{padding:22px 20px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92rem;min-height:210px}
+.code .c{color:#8f86c9}.code .k{color:var(--sun)}.code .s{color:var(--mint)}
+.cursor{display:inline-block;width:9px;height:1.1em;background:var(--mint);vertical-align:text-bottom;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.ticker{background:var(--sun);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:12px 0;animation:slide 32s linear infinite;font-weight:700}
+.ticker span{margin:0 26px}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:68px 0}
+.title{font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:10px}
+.sub{max-width:36em;margin-bottom:34px}
+.log{border-left:4px dashed var(--ink);margin-left:12px;padding-left:28px;display:grid;gap:22px}
+.commit{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:20px 22px;position:relative;box-shadow:6px 6px 0 var(--ink)}
+.commit::before{content:"";position:absolute;left:-43px;top:26px;width:20px;height:20px;border-radius:50%;background:var(--coral);border:4px solid var(--ink)}
+.hash{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;background:var(--sky);padding:3px 9px;border-radius:8px}
+.commit h3{font-size:1.35rem;margin:10px 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;background:var(--white);border:3px solid var(--ink);border-radius:22px;padding:22px;text-decoration:none;box-shadow:6px 6px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.card h3{font-size:1.3rem;margin:12px 0 8px}
+.card p{flex:1}
+.tag{align-self:flex-start;font-weight:700;font-size:.85rem;padding:4px 12px;border-radius:99px;border:2px solid var(--ink)}
+.t1{background:var(--sun)}.t2{background:var(--mint)}.t3{background:var(--coral);color:var(--white)}.t4{background:#c9c2ff}
+.go{margin-top:16px;font-weight:700;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+.feature{background:var(--ink);color:var(--white);border-radius:28px;padding:44px 34px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;box-shadow:10px 10px 0 var(--mint)}
+.feature h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+.feature p{margin:14px 0 22px}
+.feature .btn{background:var(--coral);color:var(--white);border-color:var(--white);box-shadow:5px 5px 0 var(--sun)}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills span{background:#2a2252;padding:9px 15px;border-radius:99px;font-weight:500}
+.reads{background:var(--white);border-block:3px solid var(--ink)}
+footer{background:var(--ink);color:#cfc9f5;padding:42px 0;text-align:center}
+footer a{color:var(--sun);font-weight:700}
+footer .links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:14px 0}
+@media(max-width:800px){.hero .wrap,.feature{grid-template-columns:1fr}.editor{transform:none}.btn.alt{margin:12px 0 0}}
+@media(prefers-reduced-motion:reduce){.ticker div,.cursor{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">first<span>commit</span>.career</a>
+<nav aria-label="Main"><a href="#log">Roadmap</a><a href="#courses">Courses</a><a href="#reads">Reading</a><a href="https://www.justacademy.co/blog-detail/how-freshers-can-get-their-first-software-development-job" target="_blank" rel="noopener">Full guide</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Your first software job starts with one small commit.</h1>
+<p class="lead">No experience, no problem. Here is a friendly, honest path from "two years required" to "offer accepted", written like the git history of a fresher who kept showing up.</p>
+<a class="btn" href="https://www.justacademy.co/blog-detail/how-freshers-can-get-their-first-software-development-job" target="_blank" rel="noopener">Read the full guide</a><a class="btn alt" href="#log">See the roadmap</a>
+</div>
+<div class="editor" aria-hidden="true">
+<div class="bar"><i></i><i></i><i></i></div>
+<div class="code">
+<div><span class="c"># fresher / main</span></div>
+<div><span class="k">$</span> git commit -m <span class="s" id="msg"></span><span class="cursor"></span></div>
+<div style="margin-top:14px"><span class="c">[main 7f3a9c1] ready for software developer positions</span></div>
+<div><span class="c"> 3 projects, 1 deployed app, 1 clean resume</span></div>
+</div></div>
+</div></div>
+
+<div class="ticker" aria-hidden="true"><div>
+<span>jr software developer</span><span>front end software engineer</span><span>full stack software engineer</span><span>application developer</span><span>software development engineer</span><span>QA automation engineer</span><span>jr software developer</span><span>front end software engineer</span><span>full stack software engineer</span><span>application developer</span><span>software development engineer</span><span>QA automation engineer</span>
+</div></div>
+
+<section id="log"><div class="wrap">
+<h2 class="title">The fresher's git log</h2>
+<p class="sub">Five commits that take you from empty folder to interview invite. Read from the bottom of your own story upward.</p>
+<div class="log">
+<div class="commit"><span class="hash">a1b2c3d</span><h3>Pick a lane, then a language</h3><p>Front end, back end or full stack: choose the kind of work you enjoy first. Then learn one language deeply instead of five badly.</p></div>
+<div class="commit"><span class="hash">e4f5a6b</span><h3>Build three projects you can explain</h3><p>One polished page, one full app with a database, one tool that fixes a problem you noticed. Deploy them and write a clear README.</p></div>
+<div class="commit"><span class="hash">c7d8e9f</span><h3>Fix the resume, wake up the profile</h3><p>One page, specific results, honest keywords. Make your headline and GitHub easy for a recruiter to understand in under a minute.</p></div>
+<div class="commit"><span class="hash">0a1b2c3</span><h3>Apply weekly, follow up politely</h3><p>Fifteen tailored applications beat two hundred copies. Track each one and learn from every reply, including the nos.</p></div>
+<div class="commit"><span class="hash">9f8e7d6</span><h3>Talk through your thinking in the interview</h3><p>Tell project stories, say "here is how I would find out" when stuck, and keep going. Merge to offer.</p></div>
+</div></div></section>
+
+<section id="courses" style="padding-top:20px"><div class="wrap">
+<h2 class="title">Pick your starter pack</h2>
+<p class="sub">Four classroom tracks in Mumbai for the skills most junior roles ask about first.</p>
+<div class="grid">
+<a class="card" href="https://www.justacademy.co/course-detail/mumbai/javascript-training-in-mumbai" target="_blank" rel="noopener"><span class="tag t1">Web basics</span><h3>JavaScript training in Mumbai</h3><p>The language of browsers, servers and apps. A strong base for front end and full stack paths.</p><span class="go">View course</span></a>
+<a class="card" href="https://www.justacademy.co/course-detail/mumbai/python-training-in-mumbai" target="_blank" rel="noopener"><span class="tag t2">Friendly start</span><h3>Python training in Mumbai</h3><p>Readable syntax for automation, data and backend work. Great if you want to ease in.</p><span class="go">View course</span></a>
+<a class="card" href="https://www.justacademy.co/course-detail/mumbai/selenium-training-in-mumbai" target="_blank" rel="noopener"><span class="tag t3">Testing track</span><h3>Selenium training in Mumbai</h3><p>Automation testing skills for QA roles, a popular and less crowded way into tech.</p><span class="go">View course</span></a>
+<a class="card" href="https://www.justacademy.co/job-bootcamp-detail/mumbai/mern-stack-developer-bootcamp-in-mumbai-full-stack-web-development-classroom-training" target="_blank" rel="noopener"><span class="tag t4">Bootcamp</span><h3>MERN Stack bootcamp</h3><p>MongoDB, Express, React and Node in one guided path to full stack projects.</p><span class="go">View bootcamp</span></a>
+</div></div></section>
+
+<section><div class="wrap"><div class="feature">
+<div>
+<h2>Want the full stack story from start to finish?</h2>
+<p>The MERN Stack Developer Bootcamp in Mumbai pairs live classroom practice with real projects, so your portfolio is ready when applications open.</p>
+<a class="btn" href="https://www.justacademy.co/job-bootcamp-detail/mumbai/mern-stack-developer-bootcamp-in-mumbai-full-stack-web-development-classroom-training" target="_blank" rel="noopener">Explore the bootcamp</a>
+</div>
+<div class="pills" aria-label="Stack"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span><span>Git</span><span>REST APIs</span></div>
+</div></div></section>
+
+<section id="reads" class="reads"><div class="wrap">
+<h2 class="title">Reading list for the commute</h2>
+<p class="sub">Short on time? Pick the post that matches your question today.</p>
+<div class="grid">
+<a class="card" href="https://www.justacademy.co/blog-detail/how-freshers-can-get-their-first-software-development-job" target="_blank" rel="noopener"><span class="tag t1">Start here</span><h3>How freshers can get their first software development job</h3><p>The complete walkthrough behind this page.</p><span class="go">Read post</span></a>
+<a class="card" href="https://www.justacademy.co/blog-detail/how-real-projects-help-freshers-get-it-jobs" target="_blank" rel="noopener"><span class="tag t2">Projects</span><h3>How real projects help freshers get IT jobs</h3><p>Why proof of work beats a long skills list.</p><span class="go">Read post</span></a>
+<a class="card" href="https://www.justacademy.co/blog-detail/developer-vs-tester-career-comparison-which-it-role-should-you-choose" target="_blank" rel="noopener"><span class="tag t3">Career choice</span><h3>Developer vs tester: which role should you choose?</h3><p>A clear comparison to help you pick a path.</p><span class="go">Read post</span></a>
+<a class="card" href="https://www.justacademy.co/blog-detail/mern-stack-developer-skills-companies-look-for-in-2026" target="_blank" rel="noopener"><span class="tag t4">Skills</span><h3>MERN stack developer skills companies look for in 2026</h3><p>See what recruiters list and measure yourself.</p><span class="go">Read post</span></a>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+<p class="logo" style="color:#fff">first<span>commit</span>.career</p>
+<div class="links">
+<a href="https://www.justacademy.co/blog-detail/how-freshers-can-get-their-first-software-development-job" target="_blank" rel="noopener">Full guide</a>
+<a href="https://www.justacademy.co/course-detail/mumbai/javascript-training-in-mumbai" target="_blank" rel="noopener">JavaScript</a>
+<a href="https://www.justacademy.co/course-detail/mumbai/python-training-in-mumbai" target="_blank" rel="noopener">Python</a>
+<a href="https://www.justacademy.co/course-detail/mumbai/selenium-training-in-mumbai" target="_blank" rel="noopener">Selenium</a>
+<a href="https://www.justacademy.co/job-bootcamp-detail/mumbai/mern-stack-developer-bootcamp-in-mumbai-full-stack-web-development-classroom-training" target="_blank" rel="noopener">MERN bootcamp</a>
+</div>
+<p>Made for freshers who are ready to push their first commit.</p>
+</div></footer>
+
+<script>
+(function(){
+var t='"fresher ready: hired?"',el=document.getElementById('msg'),i=0;
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=t;return}
+(function type(){el.textContent=t.slice(0,i++);if(i<=t.length)setTimeout(type,80)})();
+})();
+</script>
+</body>
+</html>
